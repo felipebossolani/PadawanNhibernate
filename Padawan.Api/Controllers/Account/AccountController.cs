@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Padawan.Api.Controllers
 {
-    [Route(Constantes.API + "v1/cadastros")]
+    [Route(Constants.API + "v1/cadastros")]
     public class AccountController : Controller
     {
         private readonly IAccountRepository _repository;

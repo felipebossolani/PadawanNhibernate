@@ -15,7 +15,7 @@ namespace Padawan.Infra.Migrations
 
         public override void Up()
         {
-            IfDatabase("SqlServer").Create.Table(TABLE).InSchema(Constantes.SCHEMA)
+            IfDatabase("SqlServer").Create.Table(TABLE).InSchema(Constants.SCHEMA)
                 .WithColumn("Id").AsInt64()
                 .PrimaryKey("pk_Account")
                 .Identity()

@@ -1,8 +1,7 @@
 ﻿using NHibernate;
-using Padawan.Infra.Context;
 using System.Threading.Tasks;
 
-namespace Padawan.Infra.Transations
+namespace Padawan.Infra.Transactions
 {
     public class Uow : IUow
     {

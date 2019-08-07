@@ -19,16 +19,12 @@ namespace Padawan.Domain.Entities
         {
             Name = name;
             Validate();
-        }
-        public virtual void Delete()
-        {
-            Validate();
-        }
+        }        
         public virtual void Validate()
         {
             AddNotifications(new Flunt.Validations.Contract().Requires()
-                .HasMaxLen(Name, Constantes.LENGTH_MAX, "Name", Messages.LENGTH_150_MAX)
-                .HasMinLen(Name, Constantes.LENGTH_MIN, "Name", Messages.LENGTH_05_MIN));
+                .HasMaxLen(Name, Constants.LENGTH_MAX, "Name", Messages.LENGTH_150_MAX)
+                .HasMinLen(Name, Constants.LENGTH_MIN, "Name", Messages.LENGTH_05_MIN));
         }
         public virtual string Name { get; protected set; }
     }

@@ -19,11 +19,8 @@ namespace Padawan.Domain.Handlers
             _accountRepository = accountRepository;
         }
         public async Task<ICommandResult> Handle(CreateAccountCommand command)
-        {
-            
+        {            
             Account account = new Account(command.Name,command.CreatedByUserId);
-
-            
             AddNotifications(account.Notifications);
 
             if (!Valid)
@@ -32,7 +29,7 @@ namespace Padawan.Domain.Handlers
                     Messages.NOTIFICATIONS,
                     Notifications);
 
-             await _accountRepository.Create(account);
+            await _accountRepository.Create(account);
 
             return new CommandResult(
                 true,
@@ -41,7 +38,6 @@ namespace Padawan.Domain.Handlers
                 {
                     Id = account.Id,
                     Name = account.Name,
-
                     CreatedDate = account.CreatedDate,
                     CreatedByUserId = account.CreatedByUserId
                 });
@@ -53,10 +49,7 @@ namespace Padawan.Domain.Handlers
             if (account == null)
                 return new CommandResult(false, Messages.Account_NOT_FOUND, null);
 
-            
-            account.Update(command.Name);
-
-            
+            account.Update(command.Name);            
             AddNotifications(account.Notifications);
 
             if (!Valid)

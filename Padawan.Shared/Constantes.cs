@@ -1,6 +1,6 @@
 ﻿namespace Padawan.Shared
 {
-    public static class Constantes
+    public static class Constants
     {
         public const string API = "api/";
         public const string SCHEMA = "dbo";

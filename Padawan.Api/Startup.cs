@@ -6,7 +6,7 @@ using Padawan.Domain.Handlers;
 using Padawan.Domain.Repositories;
 using Padawan.Infra.Context;
 using Padawan.Infra.Repositories;
-using Padawan.Infra.Transations;
+using Padawan.Infra.Transactions;
 using Padawan.Shared;
 using System.IO;
 
